@@ -1,115 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WhatsApp Web Clone</title>
-  <link rel="stylesheet" href="style.css">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webpage</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="sidebar">
-      <div class="header">Chats</div>
-      <div class="chat-list">
-        <div class="chat-item" onclick="switchChat('Alice')">
-          <div class="profile-pic"></div>
-          Alice
-        </div>
-        <div class="chat-item" onclick="switchChat('Bob')">
-          <div class="profile-pic"></div>
-          Bob
-        </div>
-        <div class="chat-item" onclick="switchChat('Charlie')">
-          <div class="profile-pic"></div>
-          Charlie
-        </div>
-      </div>
-    </div>
-    <div class="chat-window">
-      <div class="chat-header" id="chatHeader">Alice</div>
-      <div class="messages" id="messages"></div>
-      <div class="chat-input">
-        <input type="text" id="inputMessage" placeholder="Type a message" />
-        <button onclick="sendMessage()">Send</button>
-      </div>
-    </div>
-  </div>
+    <header>
+        <h1>My Responsive Website</h1>
+        <nav>
+            <ul>
+                <li> <a href="index.html"> Home </a> </li>
+                <li> <a href="#about"> About </a> </li>  
+                <li> <a href="#projects"> Projects </a> </li> 
+                <li> <a href="#contact"> Contact </a> </li> 
+            </ul>
+        </nav>
+    </header>
 
-  <!-- <script>
-    const chats = {
-      Alice: [
-        { text: "Hey, how are you?", type: "received", timestamp: getTime() },
-        { text: "I’m good, how about you?", type: "sent", timestamp: getTime() }
-      ],
-      Bob: [
-        { text: "Hello!", type: "received", timestamp: getTime() },
-        { text: "Hi Bob, what's up?", type: "sent", timestamp: getTime() }
-      ],
-      Charlie: [
-        { text: "Yo! Ready to play?", type: "received", timestamp: getTime() },
-        { text: "Always!", type: "sent", timestamp: getTime() }
-      ]
-    };
+    <main>
+        <section class="content" >
+            <article id="home">
+                <h1> Home</h1>
+                <table>
+                    <tr>
+                      <td style="padding-left: 100px;">
+                        <img src="https://static.vecteezy.com/system/resources/previews/053/238/388/non_2x/modern-minimalist-workspace-setup-white-laptop-table-with-accessories-free-png.png" alt="Laptop On Table" width="100px" height="100px" style="margin-right: 30px;">
+                      </td>
+                      
+                      <td id="one">
+                         <h3>Hi,</h3>
+                        <p>My name is <b>Bhumika Sharma</b> 
+                          As a coding maestro and expert guide,I   
+                          inspires students to unlock their programming potential.
+                        </p>
+                        
+                      </td>
+                    </tr>
+                  </table>
+            </article>
 
-    let currentChat = 'Alice';
+            <article id="about">
+                <h2>About</h2>
+                As a coding teacher, I bring a wealth of skills and experience to the classroom. 
+                I have a strong foundation in core web technologies such as 
+                <b> HTML , CSS, and Javascript </b>, 
+                as well as experience with popular frameworks such as<b> ReactJS </b>. 
+                Additionally, I am confident in my ability to help students master the coding concepts they 
+                need to succeed in the modern digital landscape.
+            </article>
+        </section>
 
-    function getTime() {
-      const now = new Date();
-      return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    }
+        <aside class="sidebar" id="projects">
+            <h3>Projects</h3>
+            <ul>
+                <li><a href="#">Project 1</a></li>
+                <li><a href="#">Project 2</a></li>
+                <li><a href="#">Project 3</a></li>
+                <li><a href="#">Project 4</a></li>
+            </ul>
+            
+            <h3>Categories</h3>
+            <ul>
+                <li><a href="#">Category 1</a></li>
+                <li><a href="#">Category 2</a></li>
+                <li><a href="#">Category 3</a></li>
+            </ul>
+        </aside>
+    </main>
 
-    function switchChat(name) {
-      currentChat = name;
-      document.getElementById("chatHeader").textContent = name;
-      renderMessages();
-    }
-
-    function renderMessages() {
-      const messagesContainer = document.getElementById("messages");
-      messagesContainer.innerHTML = "";
-      chats[currentChat].forEach(msg => {
-        const messageDiv = document.createElement("div");
-        messageDiv.classList.add("message", msg.type);
-        messageDiv.textContent = msg.text;
-
-        const timeSpan = document.createElement("div");
-        timeSpan.className = "timestamp";
-        timeSpan.textContent = msg.timestamp;
-        messageDiv.appendChild(timeSpan);
-
-        messagesContainer.appendChild(messageDiv);
-      });
-    }
-
-    function sendMessage() {
-      const input = document.getElementById("inputMessage");
-      const messageText = input.value.trim();
-      if (messageText === "") return;
-
-      const timestamp = getTime();
-
-      const newMsg = { text: messageText, type: "sent", timestamp };
-      chats[currentChat].push(newMsg);
-
-      renderMessages();
-      input.value = "";
-
-      // Simulate reply
-      setTimeout(() => {
-        const reply = {
-          text: `Reply to: ${messageText}`,
-          type: "received",
-          timestamp: getTime()
-        };
-        chats[currentChat].push(reply);
-        renderMessages();
-      }, 1000);
-    }
-
-    // Load initial chat
-    switchChat(currentChat);
-  </script> -->
-  <script src="main.js"></script>
+    <footer>
+        <p>&copy; 2025 My Responsive Website. All rights reserved.</p>
+    </footer>
 </body>
 </html>
